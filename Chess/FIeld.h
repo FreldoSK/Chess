@@ -1,14 +1,19 @@
 #pragma once
-#include "Figure.h"
+#include <iostream>
 #include <memory>
-#include <vector>
+#include "Pawn.h"
+
 
 class Field {
 private:
-	const uint16_t size;
-	std::vector<std::vector<std::shared_ptr<Figure>>> figurePtr;
+	std::string fieldName;
+	std::shared_ptr<Pawn> pawn;
+	bool isOccupate; 
 public:
-	Field(uint16_t size, std::vector<std::vector<std::shared_ptr<Figure>>> figurePtr);
-	void checkField();
+	Field(std::shared_ptr<Pawn> pawn, std::string fieldName);
+	bool getIsOccupate(); 
+	std::shared_ptr<Pawn> getFiggure();
+	std::string getFieldName();
+	void setEmptyFigure();
 };
 
