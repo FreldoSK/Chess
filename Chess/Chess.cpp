@@ -1,7 +1,11 @@
+#include "Board.h"
 
-#include <iostream>
 
 int main() {
-    std::cout << "Hello Git !" << std::endl;
+    std::cout << "Chess Game !" << std::endl;
+
+    std::unique_ptr<Board> board = std::make_unique<Board>();
+    board->checkField();
+    
 }
 
