@@ -1,6 +1,37 @@
 #include "Field.h"
 
 
+
+Field::Field(std::shared_ptr<Pawn> pawn) {
+	this->pawn = pawn;
+}
+
+std::shared_ptr<Pawn> Field::getPawn() {
+	return this->pawn;
+}
+
+std::string Field::getVisualiseField() {
+	return this->field;
+}
+
+void Field::setVisualiseField(std::string field) {
+	this->field = field; 
+}
+
+std::shared_ptr<Field> Field::getField() {
+	return this->field;
+}
+
+void Field::setField(std::shared_ptr<Field> field) {
+	this->field = field;
+}
+
+
+
+
+/*
+
+
 Field::Field(std::shared_ptr<Pawn> pawn, std::string fieldName) {
 	this->pawn = pawn;
 	this->fieldName = fieldName;
@@ -25,48 +56,4 @@ void Field::setEmptyFigure() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-Field::Field() {
-
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 8; j++) {
-
-            char columnLetter = char(97 + j);
-
-            fieldName[i][j] = columnLetter + std::to_string(8 - i);
-        }
-    }
-
-	for (int i = 0; i < 8; i++) {
-		for (int j = 0; j < 8; j++) {
-			if (i == 2) {
-				this->pawn = std::make_shared<Pawn>(Color::WHITE, Type::PAWN, fieldName[i][j]);
-			}
-
-			if (i == 7) {
-				this->pawn = std::make_shared<Pawn>(Color::BLACK, Type::PAWN, fieldName[i][j]);
-			}
-		}
-	}
-
-}
-
 */
-
-

@@ -1,5 +1,22 @@
 #include "Pawn.h"
 
+
+
+Pawn::Pawn() {
+	this->position = "p";
+}
+
+std::string Pawn::getPosition() {
+	return this->position;
+}
+
+
+
+
+
+
+
+/*
 Pawn::Pawn(Color color, Type type, std::string position) {
 	this->color = color;
 	this->type = type;
@@ -30,3 +47,6 @@ std::string Pawn::getPosition() {
 void Pawn::move(std::string position) {
 	this->position = position;
 }
+
+*/
+

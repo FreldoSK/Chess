@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 
+
+/*
 typedef enum {
 	PAWN, ROOK, KNIGHT, ARCHER, QUEEN, KING
 } Type;
@@ -24,7 +26,15 @@ public:
 	void setFigure(char figure);
 	void move(std::string position);
 };
+*/
 
+class Pawn {
+private:
+	std::string position;
+public:
+	Pawn();
+	std::string getPosition();
+};
 
 
 
