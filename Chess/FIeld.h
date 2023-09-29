@@ -23,7 +23,7 @@ private:
 	std::shared_ptr<Pawn> pawn;
 	std::string field; 
 public:
-	Field(std::shared_ptr<Pawn> pawn);
+	Field(std::shared_ptr<Pawn>& pawn);
 	std::shared_ptr<Pawn> getPawn();
 	std::string getVisualiseField();
 	void setVisualiseField(std::string field);

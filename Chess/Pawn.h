@@ -33,7 +33,7 @@ private:
 	std::string position;
 public:
 	Pawn();
-	std::string getPosition();
+	std::string getVisualized();
 };
 
 

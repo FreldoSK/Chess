@@ -7,11 +7,13 @@ Board::Board(std::shared_ptr<Field> field) {
 
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
-			if (i == 2 || i == 7) {
-				this->board[i][j] = field;
-			}
 
 			this->board[i][j] = nullptr;
+
+			if (i == 1 || i == 6) {
+				this->board[i][j] = field;
+			}
+			
 		}
 	}
 }
@@ -20,7 +22,12 @@ Board::Board(std::shared_ptr<Field> field) {
 void Board::checkField() {
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
-			std::cout << this->board[i][j]->getPawn()->getPosition();
+			if (this->board[i][j] != nullptr && this->board[i][j]->getPawn() != nullptr) {
+				std::cout << this->board[i][j]->getPawn()->getVisualized();
+			}
+			else {
+				std::cout << ".";
+			}
 		}
 		std::cout << "\n";
 	}

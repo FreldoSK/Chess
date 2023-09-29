@@ -6,7 +6,7 @@ Pawn::Pawn() {
 	this->position = "p";
 }
 
-std::string Pawn::getPosition() {
+std::string Pawn::getVisualized() {
 	return this->position;
 }
 

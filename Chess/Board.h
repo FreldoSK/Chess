@@ -8,7 +8,5 @@ private:
 public:
 	Board(std::shared_ptr<Field> field);
 	void checkField();
-	std::shared_ptr<Field> getField();
-	void setField(std::shared_ptr<Field> field);
 };
 
