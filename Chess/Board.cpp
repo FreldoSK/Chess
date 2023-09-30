@@ -17,8 +17,22 @@ Board::Board(std::shared_ptr<Field> field) {
 		}
 	}
 }
-	
 
+
+std::shared_ptr<Field> Board::getField(uint16_t Xposition, uint16_t Yposition) {
+	return this->board[Xposition][Yposition];
+}
+
+
+std::shared_ptr<Field> Board::setField(uint16_t newXposition, uint16_t newYposition) {
+
+		if (this->getField[newXposition][newYposition] != nullptr) {
+			return 
+		}
+	}
+}
+
+	
 void Board::checkField() {
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
