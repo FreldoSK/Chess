@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+#define PAWN_INIT 0
 
 /*
 typedef enum {
@@ -31,9 +31,12 @@ public:
 class Pawn {
 private:
 	std::string position;
+	uint16_t id; 
 public:
-	Pawn();
+	Pawn(uint16_t id);
 	std::string getVisualized();
+	uint16_t gedId();
+	void setId(uint16_t id);
 };
 
 

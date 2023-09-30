@@ -1,6 +1,6 @@
 #include "Field.h"
 
-Field::Field(std::shared_ptr<Pawn>& pawn) {
+Field::Field(std::shared_ptr<Pawn> pawn) {
 	this->pawn = pawn;
 }
 

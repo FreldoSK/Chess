@@ -2,14 +2,22 @@
 
 
 
-Pawn::Pawn() {
+Pawn::Pawn(uint16_t id) {
 	this->position = "p";
+	this->id = id;
 }
 
 std::string Pawn::getVisualized() {
 	return this->position;
 }
 
+uint16_t Pawn::gedId() {
+	return this->id;
+}
+
+void Pawn::setId(uint16_t id) {
+	this->id = id; 
+}
 
 
 
