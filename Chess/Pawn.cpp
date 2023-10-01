@@ -19,6 +19,18 @@ void Pawn::setId(uint16_t id) {
 	this->id = id; 
 }
 
+bool Pawn::getFirtstMove() {
+	return this->firtsMove;
+}
+
+void Pawn::setFirstMove(bool move) {
+	this->firtsMove = move;
+}
+
+void Pawn::move(std::shared_ptr<Board> board) {
+	
+}
+
 
 
 

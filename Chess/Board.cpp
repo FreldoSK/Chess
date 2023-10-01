@@ -34,25 +34,38 @@ std::shared_ptr<Field> Board::findById(uint16_t id) {
 	return nullptr;
 }
 
+std::shared_ptr<Field> Board::getField(uint16_t possitionX, uint16_t possitionY) {
+	return this->board[possitionX][possitionY];
+}
 
-void Board::removePawnByID(uint16_t possitionX, uint16_t possitionY) {
-	if (this->board[possitionX][possitionY] == nullptr) {
-		std::cout << "This Pawn is already removed ! " << std::endl;
-		return;
+
+
+void Board::removePawn(uint16_t id) {
+	std::shared_ptr<Field> field = this->findById(id);
+
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+
+			if (this->board[i][j] == field) {
+				this->board[i][j] = nullptr;
+			}
+
+		}
 	}
-
-	this->board[possitionX][possitionY] = nullptr;
 }
 
 void Board::setNewPosition(uint16_t id, uint16_t possitionX, uint16_t possitionY) {
+
+	
 	std::shared_ptr<Field> foundField = this->findById(id);
+	this->removePawn(id);
 
 	if (foundField != nullptr) {
 		this->board[possitionX][possitionY] = foundField;
-		foundField = nullptr;
 	} else {
 		std::cout << "Field with id " << id << " not found!" << std::endl;
 	}
+
 }
 
 	

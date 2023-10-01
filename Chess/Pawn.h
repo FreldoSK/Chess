@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Board.h"
 #define PAWN_INIT 0
 
 /*
@@ -32,11 +33,15 @@ class Pawn {
 private:
 	std::string position;
 	uint16_t id; 
+	bool firtsMove; 
 public:
 	Pawn(uint16_t id);
 	std::string getVisualized();
 	uint16_t gedId();
 	void setId(uint16_t id);
+	bool getFirtstMove();
+	void setFirstMove(bool move);
+	void move(std::shared_ptr<Board> board);
 };
 
 
