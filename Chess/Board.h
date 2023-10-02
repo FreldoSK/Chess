@@ -2,14 +2,17 @@
 #include "Field.h"
 #include<vector>
 
+
 class Board {
 private:
 	std::vector<std::vector<std::shared_ptr<Field>>> board; 
+	uint16_t possitionX, possitionY;
 
 
 	std::shared_ptr<Field> findById(uint16_t id);
 	void removePawn(uint16_t id);
 	std::shared_ptr<Field> getField(uint16_t possitionX, uint16_t possitionY);
+	void getBoothPossitions(std::shared_ptr<Field> field);
 	
 public:
 	Board(std::shared_ptr<Field> field);

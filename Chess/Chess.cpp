@@ -21,7 +21,7 @@ int main() {
         std::cout << "Give me Ypossition !\n";
         std::cin >> possitionY;
 
-        board->setNewPosition(id, possitionX, possitionY);
+        board->makeMove(id, possitionX, possitionY);
 
     }
 

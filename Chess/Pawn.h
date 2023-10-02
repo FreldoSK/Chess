@@ -1,12 +1,11 @@
 #pragma once
-
-
 #define ID_INIT 0
 #define TYPE_INIT Type::PAWN
 #define COLOR_INIT Color::WHITE
 #define MOVE_INIT false
-
 #include <string>
+
+
 enum class Type {
 	PAWN, ROOK, KNIGHT, ARCHER, QUEEN, KING
 };

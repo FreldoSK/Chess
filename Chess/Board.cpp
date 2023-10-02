@@ -3,6 +3,9 @@
 
 
 Board::Board(std::shared_ptr<Field> field) {
+	this->possitionX = 0;
+	this->possitionY = 0;
+
 	const size_t size = 8;
 	this->board.resize(size, std::vector<std::shared_ptr<Field>>(size));
 	uint16_t id = 0;
@@ -45,6 +48,19 @@ std::shared_ptr<Field> Board::getField(uint16_t possitionX, uint16_t possitionY)
 }
 
 
+void Board::getBoothPossitions(std::shared_ptr<Field> field) {
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			if (this->getField(i, j) == field) {
+				this->possitionX = i;
+				this->possitionY = j;
+				return;
+			}
+		}
+	}
+	std::cout << "Possitions of this field not found !" << std::endl;
+}
+
 
 void Board::removePawn(uint16_t id) {
 	std::shared_ptr<Field> field = this->findById(id);
@@ -59,6 +75,7 @@ void Board::removePawn(uint16_t id) {
 		}
 	}
 }
+
 
 void Board::setNewPosition(uint16_t id, uint16_t possitionX, uint16_t possitionY) {
 
@@ -100,12 +117,13 @@ void Board::makeMove(uint16_t id, uint16_t possitionX, uint16_t possitionY) {
 	{
 	case Type::PAWN:
 
-		if (pawn->getColor() == Color::WHITE) {
-			if (possitionX)
-
-
-	
-
+		if (pawn->getColor() == Color::BLACK) {
+			if (possitionY != 0 && possitionX < 0 && possitionX > 2) {
+				std::cout << "Bad entry ! " << std::endl;
+				return;
+			}
+			this->getBoothPossitions(fieldPawn);
+			this->setNewPosition(id, this->possitionX + possitionX, this->possitionY + possitionY);
 		}
 
 
