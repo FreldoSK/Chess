@@ -4,10 +4,9 @@
 int main() {
     std::cout << "Chess Game !" << std::endl;
 
-    std::shared_ptr<Pawn> pawn = std::make_shared<Pawn>(PAWN_INIT);
+    std::shared_ptr<Pawn> pawn = std::make_shared<Pawn>(ID_INIT, TYPE_INIT, COLOR_INIT, MOVE_INIT);
     std::shared_ptr<Field> field = std::make_shared<Field>(pawn);
     std::unique_ptr<Board> board = std::make_unique<Board>(field);
-
 
     for (;;) {
 

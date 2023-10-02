@@ -10,10 +10,11 @@ private:
 	std::shared_ptr<Field> findById(uint16_t id);
 	void removePawn(uint16_t id);
 	std::shared_ptr<Field> getField(uint16_t possitionX, uint16_t possitionY);
-public:
 	
+public:
 	Board(std::shared_ptr<Field> field);
 	void checkField();
 	void setNewPosition(uint16_t id, uint16_t possitionX, uint16_t possitionY);
+	void makeMove(uint16_t id, uint16_t possitionX, uint16_t possitionY);
 };
 

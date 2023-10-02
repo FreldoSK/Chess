@@ -2,16 +2,19 @@
 
 
 
-Pawn::Pawn(uint16_t id) {
+Pawn::Pawn(uint16_t id, Type type, Color color, bool firstMove) {
 	this->position = "p";
 	this->id = id;
+	this->type = type;
+	this->color = color;
+	this->firstMove = firstMove;
 }
 
 std::string Pawn::getVisualized() {
 	return this->position;
 }
 
-uint16_t Pawn::gedId() {
+uint16_t Pawn::getId() {
 	return this->id;
 }
 
@@ -20,36 +23,11 @@ void Pawn::setId(uint16_t id) {
 }
 
 bool Pawn::getFirtstMove() {
-	return this->firtsMove;
+	return this->firstMove;
 }
 
-void Pawn::setFirstMove(bool move) {
-	this->firtsMove = move;
-}
-
-void Pawn::move(std::shared_ptr<Board> board) {
-	
-}
-
-
-
-
-
-
-/*
-Pawn::Pawn(Color color, Type type, std::string position) {
-	this->color = color;
-	this->type = type;
-	this->position = position;
-	this->figure = 'p';
-}
-
-char Pawn::getFigure() {
-	return this->figure;
-}
-
-void Pawn::setFigure(char figure) {
-	this->figure = figure;
+void Pawn::setFirstMove(bool& move) {
+	this->firstMove = move;
 }
 
 Color Pawn::getColor() const {
@@ -60,13 +38,14 @@ Type Pawn::getType() {
 	return this->type;
 }
 
-std::string Pawn::getPosition() {
-	return this->position;
+void Pawn::setColor(const Color& color) {
+	this->color = color;
 }
 
-void Pawn::move(std::string position) {
-	this->position = position;
+void Pawn::setType(const Type& type) {
+	this->type = type;
 }
 
-*/
+
+
 

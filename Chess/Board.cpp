@@ -9,8 +9,14 @@ Board::Board(std::shared_ptr<Field> field) {
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
 			this->board[i][j] = nullptr;
-			if (i == 1 || i == 6) {
-				this->board[i][j] = std::make_shared<Field>(std::make_shared<Pawn>(id));
+
+			if (i == 1) {
+				this->board[i][j] = std::make_shared<Field>(std::make_shared<Pawn>(id, Type::PAWN, Color::BLACK, false));
+				id++;
+			}
+
+			if (i == 6) {
+				this->board[i][j] = std::make_shared<Field>(std::make_shared<Pawn>(id, Type::PAWN, Color::WHITE, false));
 				id++;
 			}
 		}
@@ -24,7 +30,7 @@ std::shared_ptr<Field> Board::findById(uint16_t id) {
 
 			if (this->board[i][j] != nullptr && this->board[i][j]->getPawn() != nullptr) {
 
-				if (this->board[i][j]->getPawn()->gedId() == id) {
+				if (this->board[i][j]->getPawn()->getId() == id) {
 					return this->board[i][j];
 				}
 
@@ -73,6 +79,7 @@ void Board::checkField() {
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
 			if (this->board[i][j] != nullptr && this->board[i][j]->getPawn() != nullptr) {
+
 				std::cout << this->board[i][j]->getPawn()->getVisualized();
 			}
 			else {
@@ -84,4 +91,36 @@ void Board::checkField() {
 }
 
 
+void Board::makeMove(uint16_t id, uint16_t possitionX, uint16_t possitionY) {
 
+	std::shared_ptr<Field> fieldPawn = this->findById(id);
+	std::shared_ptr<Pawn> pawn = fieldPawn->getPawn();
+
+	switch (pawn->getType())
+	{
+	case Type::PAWN:
+
+		if (pawn->getColor() == Color::WHITE) {
+			if (possitionX)
+
+
+	
+
+		}
+
+
+		break;
+	case Type::ROOK:
+		break;
+	case Type::KNIGHT:
+		break;
+	case Type::ARCHER:
+		break;
+	case Type::QUEEN:
+		break;
+	case Type::KING:
+		break;
+	default:
+		break;
+	}
+}
