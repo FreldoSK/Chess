@@ -38,6 +38,17 @@ public:
 	void setType(const Type& type);
 };
 
+/*
+https://www.researchgate.net/publication/227692003_Two_decades_of_urban_climate_research_A_review_of_turbulence_exchanges_of_energy_and_water_and_the_urban_heat_island
+https://www.scirp.org/pdf/AJCC_2013121210043959.pdf
+https://www.citiq.cz/senzor-teploty-povrchu
+https://www.sciencedirect.com/science/article/pii/S2210670723002251
+https://www.mdpi.com/1424-8220/9/4/2647
 
+
+
+
+
+*/
 
 
