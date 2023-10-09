@@ -44,8 +44,8 @@ https://www.scirp.org/pdf/AJCC_2013121210043959.pdf
 https://www.citiq.cz/senzor-teploty-povrchu
 https://www.sciencedirect.com/science/article/pii/S2210670723002251
 https://www.mdpi.com/1424-8220/9/4/2647
-
-
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6068537/
+https://www.sciencedirect.com/science/article/pii/S2214509523001870
 
 
 
